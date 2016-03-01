@@ -23,6 +23,11 @@ $margin: 5%;
   text-align: center;
 }
 
+.box.hover {
+  color: lighten($base-color, 50%);
+  background-color: $base-color;
+}
+
 h2 {
   padding-top: 5px;
   width: $width;
@@ -32,6 +37,30 @@ h2 {
 }
 
 .fa{
-  // color: lighten($base-color, 50%);
+  width: 100%;
   color: $secondary-color;
+}
+
+p {
+  display: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+
+h2.hover {
+  @extend .box.hover;
+  border-top: none;
+  border-bottom: solid 3px $secondary-color;
+}
+
+.fa.hover {
+  @extend .box.hover;
+  width: 100%;
+}
+
+p.hover {
+  display:inline-block;
+  @extend .box.hover;
+  text-align: center;
 }

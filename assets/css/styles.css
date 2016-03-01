@@ -12,6 +12,10 @@
   display: inline-block;
   text-align: center; }
 
+.box.hover, h2.hover, .fa.hover, p.hover {
+  color: white;
+  background-color: #b3e0e1; }
+
 h2 {
   padding-top: 5px;
   width: 90%;
@@ -20,6 +24,23 @@ h2 {
   border-top: solid 3px #204489; }
 
 .fa {
+  width: 100%;
   color: #204489; }
+
+p {
+  display: none;
+  padding: 0px;
+  margin: 0px; }
+
+h2.hover {
+  border-top: none;
+  border-bottom: solid 3px #204489; }
+
+.fa.hover {
+  width: 100%; }
+
+p.hover {
+  display: inline-block;
+  text-align: center; }
 
 /*# sourceMappingURL=styles.css.map */
