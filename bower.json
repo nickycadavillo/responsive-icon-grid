@@ -1,0 +1,22 @@
+{
+  "name": "responsive-icon-grid",
+  "homepage": "https://github.com/nickycadavillo/responsive-icon-grid",
+  "authors": [
+    "Nicky Cadavillo <nicoleacadavillo@gmail.com>"
+  ],
+  "description": "",
+  "main": "index.html",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.1",
+    "font-awesome": "fontawesome#^4.5.0"
+  }
+}

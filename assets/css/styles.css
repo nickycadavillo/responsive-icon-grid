@@ -1,0 +1,25 @@
+.boxes {
+  width: 90%;
+  list-style-type: none;
+  margin-left: 5%; }
+
+.box {
+  padding-top: 7.5%;
+  padding-bottom: 7.5%;
+  margin-left: -2px;
+  margin-right: -2px;
+  min-width: 30%;
+  display: inline-block;
+  text-align: center; }
+
+h2 {
+  padding-top: 5px;
+  width: 90%;
+  margin-left: 5%;
+  color: #204489;
+  border-top: solid 3px #204489; }
+
+.fa {
+  color: #204489; }
+
+/*# sourceMappingURL=styles.css.map */
