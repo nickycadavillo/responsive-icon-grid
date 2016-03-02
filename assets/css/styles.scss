@@ -3,6 +3,37 @@ $secondary-color: rgb(32, 68, 137);
 $width: 90%;
 $margin: 5%;
 
+$breakpoints: (
+  'phone': (max-width: 700px),
+  'medium': (max-width: 1000px),
+  'large': (min-width: 1001px),
+);
+// SOURCED FROM: http://sass-guidelin.es/#responsive-web-design-and-breakpoints
+
+@mixin respond-to($breakpoint) {
+  $raw-query: map-get($breakpoints, $breakpoint);
+
+  @if $raw-query {
+    $query: if(
+      type-of($raw-query) == 'string',
+      unquote($raw-query),
+      inspect($raw-query)
+    );
+
+    @media #{$query} {
+      @content;
+    }
+  } @else {
+    @error 'No value found for `#{$breakpoint}`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  }
+}
+
+// SOURCED FROM: http://sass-guidelin.es/#responsive-web-design-and-breakpoints
+
+
+
+
 .boxes {
   width: $width;
   list-style-type: none;
@@ -12,15 +43,25 @@ $margin: 5%;
 
 
 .box {
-
+  min-width: $width/3;
   padding-top: $width/12;
   padding-bottom: $width/12;
   margin-left: -2px;
   margin-right: -2px;
-  min-width: $width/3;
-  // background-color: $base-color;
   display: inline-block;
   text-align: center;
+
+  @include respond-to('medium') {
+    min-width: $width/2;
+    padding-top: $width/6;
+    padding-bottom: $width/6;
+  }
+
+  @include respond-to('phone') {
+    width: $width;
+    padding-top: $width/3;
+    padding-bottom: $width/3;
+  }
 }
 
 .box.hover {
@@ -34,6 +75,7 @@ h2 {
   margin-left: 5%;
   color: $secondary-color;
   border-top: solid 3px $secondary-color;
+  -webkit-transition: border 0.3s ease;
 }
 
 .fa{
@@ -42,7 +84,7 @@ h2 {
 }
 
 p {
-  display: none;
+  visibility: hidden;
   padding: 0px;
   margin: 0px;
 }
@@ -60,7 +102,8 @@ h2.hover {
 }
 
 p.hover {
-  display:inline-block;
+  visibility: visible;
   @extend .box.hover;
   text-align: center;
+  font-size: 1.5em;
 }

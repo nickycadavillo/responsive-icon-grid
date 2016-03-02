@@ -4,13 +4,23 @@
   margin-left: 5%; }
 
 .box {
+  min-width: 30%;
   padding-top: 7.5%;
   padding-bottom: 7.5%;
   margin-left: -2px;
   margin-right: -2px;
-  min-width: 30%;
   display: inline-block;
   text-align: center; }
+  @media (max-width: 1000px) {
+    .box {
+      min-width: 45%;
+      padding-top: 15%;
+      padding-bottom: 15%; } }
+  @media (max-width: 700px) {
+    .box {
+      width: 90%;
+      padding-top: 30%;
+      padding-bottom: 30%; } }
 
 .box.hover, h2.hover, .fa.hover, p.hover {
   color: white;
@@ -21,14 +31,15 @@ h2 {
   width: 90%;
   margin-left: 5%;
   color: #204489;
-  border-top: solid 3px #204489; }
+  border-top: solid 3px #204489;
+  -webkit-transition: border 0.3s ease; }
 
 .fa {
   width: 100%;
   color: #204489; }
 
 p {
-  display: none;
+  visibility: hidden;
   padding: 0px;
   margin: 0px; }
 
@@ -40,7 +51,8 @@ h2.hover {
   width: 100%; }
 
 p.hover {
-  display: inline-block;
-  text-align: center; }
+  visibility: visible;
+  text-align: center;
+  font-size: 1.5em; }
 
 /*# sourceMappingURL=styles.css.map */
